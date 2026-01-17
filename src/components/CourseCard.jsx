@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBook, FaClock, FaStar, FaHeart } from 'react-icons/fa';
+import { FaBook, FaClock, FaHeart } from 'react-icons/fa';
 import './CourseCard.css';
 
 const CourseCard = ({ course, diplomaId, onToggleFavorite, isFavorite }) => {
