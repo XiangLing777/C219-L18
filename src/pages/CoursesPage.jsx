@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Outlet, useParams, Link } from 'react-router-dom';
 import { diplomas } from '../data/diplomaData';
-import { FaHeart, FaRegHeart, FaBook, FaClock, FaStar } from 'react-icons/fa';
+import { FaHeart, FaRegHeart, FaBook, FaClock } from 'react-icons/fa';
 import './CoursesPage.css';
 
 const CoursesPage = () => {

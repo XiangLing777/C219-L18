@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { diplomas } from '../data/diplomaData';
-import { FaBook, FaClock, FaUserGraduate, FaStar, FaArrowLeft } from 'react-icons/fa';
+import { FaBook, FaClock, FaUserGraduate, FaArrowLeft } from 'react-icons/fa';
 import './CourseDetail.css';
 
 const CourseDetail = () => {
@@ -67,16 +67,6 @@ const CourseDetail = () => {
               <div className="info-content">
                 <label>Faculty</label>
                 <p>{course.faculty}</p>
-              </div>
-            </div>
-            
-            <div className="info-item">
-              <div className="info-icon">
-                <FaStar />
-              </div>
-              <div className="info-content">
-                <label>Prerequisites</label>
-                <p>{course.prerequisites || 'None'}</p>
               </div>
             </div>
           </div>
