@@ -1,0 +1,152 @@
+.courses-container {
+  display: flex;
+  height: 100%;
+}
+
+.courses-list-panel {
+  width: 400px;
+  border-right: 1px solid #e0e0e0;
+  background: #fff;
+  overflow-y: auto;
+}
+
+.panel-header {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f8f9fa;
+}
+
+.panel-header h3 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.panel-subtitle {
+  margin: 0 0 15px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.courses-list {
+  padding: 10px;
+}
+
+.course-item {
+  display: block;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s;
+}
+
+.course-item:hover {
+  border-color: #28a745;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.1);
+}
+
+.course-item.active {
+  border-color: #28a745;
+  background: #f0fff4;
+}
+
+.course-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.course-code {
+  background: #e9ecef;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #495057;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+}
+
+.favorite-btn:hover {
+  color: #ff6b6b;
+}
+
+.favorite-btn.active {
+  color: #ff6b6b;
+}
+
+.course-name {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.course-description {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.course-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+  color: #888;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.course-details-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #fff;
+}
+
+.no-course-selected {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #666;
+}
+
+.no-course-selected h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

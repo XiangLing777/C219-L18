@@ -1,0 +1,21 @@
+.course-detail {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.course-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.course-header-main {
+  flex: 1;
+}
+
+.course-code-badge {
+  display: inline-block;
+}
