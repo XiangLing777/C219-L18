@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Outlet, useParams, Link } from 'react-router-dom';
 import { diplomas } from '../data/diplomaData';
 import { FaHeart, FaRegHeart, FaBook, FaClock } from 'react-icons/fa';
-import './CoursesPage.css';
 
 const CoursesPage = () => {
   const { diplomaId, courseId } = useParams();
@@ -13,7 +12,7 @@ const CoursesPage = () => {
 
   if (!diploma) {
     return (
-      <div className="no-selection">
+      <div style={{ padding: '40px', textAlign: 'center' }}>
         <h3>Select a diploma to view courses</h3>
         <p>Choose a diploma from the left panel to see available courses</p>
       </div>
@@ -34,32 +33,52 @@ const CoursesPage = () => {
   };
 
   return (
-    <div className="courses-container">
+    <div style={{ display: 'flex', height: '100%' }}>
       {/* Courses List Panel */}
-      <div className="courses-list-panel">
-        <div className="panel-header">
-          <h3>{diploma.name}</h3>
-          <p className="panel-subtitle">Available Courses</p>
+      <div style={{ width: '400px', borderRight: '1px solid #e0e0e0', backgroundColor: '#fff', overflowY: 'auto' }}>
+        <div style={{ padding: '20px', borderBottom: '1px solid #e0e0e0', backgroundColor: '#f8f9fa' }}>
+          <h3 style={{ margin: '0 0 5px 0', color: '#333' }}>{diploma.name}</h3>
+          <p style={{ margin: '0 0 15px 0', color: '#666', fontSize: '14px' }}>Available Courses</p>
           <input
             type="text"
             placeholder="Search courses..."
-            className="search-input"
+            style={{ width: '100%', padding: '10px 15px', border: '1px solid #ddd', borderRadius: '6px', fontSize: '14px' }}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
 
-        <div className="courses-list">
+        <div style={{ padding: '10px' }}>
           {filteredCourses.map(course => (
             <Link
               key={course.id}
               to={`/diplomas/${diplomaId}/${course.id}`}
-              className={`course-item ${courseId === course.id ? 'active' : ''}`}
+              style={{
+                display: 'block',
+                padding: '15px',
+                marginBottom: '10px',
+                backgroundColor: courseId === course.id ? '#f0fff4' : '#fff',
+                border: '1px solid #e0e0e0',
+                borderColor: courseId === course.id ? '#28a745' : '#e0e0e0',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                color: '#333',
+                transition: 'all 0.2s'
+              }}
             >
-              <div className="course-item-header">
-                <div className="course-code">{course.code}</div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
+                <div style={{ backgroundColor: '#e9ecef', padding: '4px 8px', borderRadius: '4px', fontSize: '12px', fontWeight: '600', color: '#495057' }}>
+                  {course.code}
+                </div>
                 <button
-                  className={`favorite-btn ${favorites.includes(course.id) ? 'active' : ''}`}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: favorites.includes(course.id) ? '#ff6b6b' : '#ccc',
+                    cursor: 'pointer',
+                    fontSize: '16px',
+                    padding: '0'
+                  }}
                   onClick={(e) => {
                     e.preventDefault();
                     toggleFavorite(course.id);
@@ -69,13 +88,13 @@ const CoursesPage = () => {
                   {favorites.includes(course.id) ? <FaHeart /> : <FaRegHeart />}
                 </button>
               </div>
-              <h4 className="course-name">{course.name}</h4>
-              <p className="course-description">{course.description}</p>
-              <div className="course-meta">
-                <span className="meta-item">
+              <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#333' }}>{course.name}</h4>
+              <p style={{ margin: '0 0 10px 0', fontSize: '14px', color: '#666', lineHeight: '1.4' }}>{course.description}</p>
+              <div style={{ display: 'flex', gap: '15px', fontSize: '12px', color: '#888' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <FaBook /> {course.credits} Credits
                 </span>
-                <span className="meta-item">
+                <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <FaClock /> {course.duration}
                 </span>
               </div>
@@ -85,7 +104,7 @@ const CoursesPage = () => {
       </div>
 
       {/* Course Details Panel */}
-      <div className="course-details-panel">
+      <div style={{ flex: 1, overflowY: 'auto' }}>
         <Outlet />
       </div>
     </div>
